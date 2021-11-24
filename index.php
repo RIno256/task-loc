@@ -26,21 +26,21 @@
             </br>
             <p><h2>Information</h2></p>
             <?php
-                 print($record->country->isoCode . "\n"); // 'US'
-                 print($record->country->name . "\n"); // 'United States'
-                 print($record->country->names['zh-CN'] . "\n"); // '美国'
-         
-                 print($record->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
-                 print($record->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
-         
-                 print($record->city->name . "\n"); // 'Minneapolis'
-         
-                 print($record->postal->code . "\n"); // '55455'
-         
-                 print($record->location->latitude . "\n"); // 44.9733
-                 print($record->location->longitude . "\n"); // -93.2323
-         
-                 print($record->traits->network . "\n"); // '128.101.101.101/32'
+                 print($City->country->isoCode . "\n"); // 'US'
+                 print($City->country->name . "\n"); // 'United States'
+                 print($City->country->names['zh-CN'] . "\n"); // '美国'
+
+                 print($City->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
+                 print($City->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
+ 
+                 print($City->city->name . "\n"); // 'Minneapolis'
+
+                 print($City->postal->code . "\n"); // '55455'
+
+                 print($City->location->latitude . "\n"); // 44.9733
+                 print($City->location->longitude . "\n"); // -93.2323
+
+                 print($City->traits->network . "\n"); // '128.101.101.101/32'
             ?>
         <di>
     </div>
