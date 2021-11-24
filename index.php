@@ -28,7 +28,7 @@
             <?php
                  print($City->country->isoCode . "\n"); // 'US'
                  print($City->country->name . "\n"); // 'United States'
-                 print($City->country->names['zh-CN'] . "\n"); // '美国'
+                 print($City->country->names['en-EN'] . "\n"); // '美国'
 
                  print($City->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
                  print($City->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
