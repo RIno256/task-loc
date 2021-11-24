@@ -15,8 +15,9 @@
         #################################################
         $read_city = new Reader('/var/www/task.test/db/GeoLite2-City.mmdb');
         $read_country = new Reader('/var/www/task.test/db/GeoLite2-Country.mmdb');
+        $read_asn = new Reader('/var/www/task.test/db/GeoLite2-ASN.mmdb');
         #################################################
-        #$ASN_=
+        $ASN = $read_asn->asn($real_ip);
         $City =  $read_city -> city($real_ip);
     ?>
     <div class= "content">
@@ -26,23 +27,26 @@
             </br>
             <p><h2>Information</h2></p>
             <?php
-                 print($City->country->isoCode . "\n"); // 'US'
-                 print($City->country->name . "\n"); // 'United States'
-                 print($City->country->names['en-EN'] . "\n"); // '美国'
+                print($City->country->isoCode . "\n"); // 'US'
+                print($City->country->name . "\n"); // 'United States'
+                print($City->country->names['en-EN'] . "\n"); // '美国'
 
-                 print($City->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
-                 print($City->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
+                print($City->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
+                print($City->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
  
-                 print($City->city->name . "\n"); // 'Minneapolis'
+                print($City->city->name . "\n"); // 'Minneapolis'
 
-                 print($City->postal->code . "\n"); // '55455'
+                print($City->postal->code . "\n"); // '55455'
 
-                 print($City->location->latitude . "\n"); // 44.9733
-                 print($City->location->longitude . "\n"); // -93.2323
+                print($City->location->latitude . "\n"); // 44.9733
+                print($City->location->longitude . "\n"); // -93.2323
 
-                 print($City->traits->network . "\n"); // '128.101.101.101/32'
+                print($City->traits->network . "\n"); // '128.101.101.101/32'
+                 
+                print($ASN->autonomous_system_number. "\n");
+
             ?>
-        <di>
+        <div>
     </div>
 </body>
 </html>
