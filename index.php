@@ -17,7 +17,7 @@
         $read_country = new Reader('/var/www/task.test/db/GeoLite2-Country.mmdb');
         $read_asn = new Reader('/var/www/task.test/db/GeoLite2-ASN.mmdb');
         #################################################
-        $ASN = $read_asn->asn($real_ip);
+        $ASN = $read_asn -> asn($real_ip);
         $City =  $read_city -> city($real_ip);
     ?>
     <div class= "content">
@@ -43,7 +43,10 @@
 
                 print($City->traits->network . "\n"); // '128.101.101.101/32'
                  
-                print($ASN->autonomous_system_number. "\n");
+                print($ASN->autonomousSystemNumber . "\n");
+                print($ASN->autonomousSystemOrganization . "\n");
+                print($ASN->ipAddress . "\n");
+                print($ASN->network . "\n");
 
             ?>
         <div>
