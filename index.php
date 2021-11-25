@@ -60,10 +60,6 @@
                             <td><p><?php print($City->city->name . "\n"); ?></p></td>
                         </tr>
                         <tr>
-                            <td class="info"><p>Postal code</p></td>
-                            <td><p><?php print($City->postal->code . "\n"); ?></p></td>
-                        </tr>
-                        <tr>
                             <td class="info"><p>Latitude</p></td>
                             <td><p><?php print($City->location->latitude . "\n"); ?></p></td>
                         </tr>
