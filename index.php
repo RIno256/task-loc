@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>IP address information</title>
 </head>
 <body>
@@ -22,33 +23,81 @@
     ?>
     <div class= "content">
         <div class= "head_ip">
-            <p><h1>Your IP is: </h1><p>
-            <p><code><h3><?php echo $real_ip ?></h3></code></p>
-            </br>
-            <p><h2>Information</h2></p>
-            <?php
-                print($City->country->isoCode . "\n"); // 'US'
-                print($City->country->name . "\n"); // 'United States'
-                print($City->country->names['en-EN'] . "\n"); // '美国'
-
-                print($City->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
-                print($City->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
- 
-                print($City->city->name . "\n"); // 'Minneapolis'
-
-                print($City->postal->code . "\n"); // '55455'
-
-                print($City->location->latitude . "\n"); // 44.9733
-                print($City->location->longitude . "\n"); // -93.2323
-
-                print($City->traits->network . "\n"); // '128.101.101.101/32'
-                 
-                print($ASN->autonomousSystemNumber . "\n");
-                print($ASN->autonomousSystemOrganization . "\n");
-                print($ASN->ipAddress . "\n");
-                print($ASN->network . "\n");
-
-            ?>
+            <div class="ip_info">
+                <p><h1>Your IP is: </h1><p>
+                <p><code><h3><?php echo $real_ip ?></h3></code></p>
+            <di>
+            <br>
+            <div class="main_info">
+                <p><h2>Information</h2></p>
+            <div>
+            <br>
+            <div class="table_info">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="info"><p>IP address<p></td>
+                            <td><p><?php print($real_ip . "\n")?><p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Country</p></td>
+                            <td><p><?php print($City->country->name . "\n"); ?><p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Country(ISO code)</p></td>
+                            <td ><p><?php print($City->country->isoCode . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Region</p></td>
+                            <td><p><?php print($City->mostSpecificSubdivision->name . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Region code</p></td>
+                            <td><p><?php print($City->mostSpecificSubdivision->isoCode . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>City</p></td>
+                            <td><p><?php print($City->city->name . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Postal code</p></td>
+                            <td><p><?php print($City->postal->code . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Latitude</p></td>
+                            <td><p><?php print($City->location->latitude . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Longitude</p></td>
+                            <td><p><?php print($City->location->longitude . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>ASN</p></td>
+                            <td><p><?php print($ASN->autonomousSystemNumber . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>ASN(orgabizatiopn)</p></td>
+                            <td><p><?php print($ASN->autonomousSystemOrganization . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"><p>Network</p></td>
+                            <td><p><?php print($ASN->network . "\n"); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td class="info"> User agent: RAW</td>
+                            <td>
+                                <p>
+                                    <?php
+                                        echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+                                        $browser = get_browser(null, true);
+                                        print_r($browser);
+                                    ?>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         <div>
     </div>
 </body>
